@@ -17,7 +17,7 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server, {
     cors: {
         // origin: '*', // Allow all origins
-         origin: 'http://localhost:3000', // Allow specific origin
+         origin: ['http://localhost:3000', 'https://surenex-chat-app-client.onrender.com'], // Allow specific origin
         methods: ['GET', 'POST'], // Allow specific HTTP methods
     },
 });
