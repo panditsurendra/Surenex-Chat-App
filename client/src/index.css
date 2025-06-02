@@ -526,7 +526,9 @@ i{
 
 @media only screen and (max-width: 768px) {
   .app-chat-area {
-    height: 75dvh; 
+    height: 80dvh; 
+    width: 95vw;
+    margin: 0 auto;
   }
 
   .main-chat-area {
