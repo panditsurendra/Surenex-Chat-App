@@ -19,6 +19,7 @@ function ChatArea({ socket }){
     const [allMessages, setAllMessages] = useState([]);
      const [isTyping, setIsTyping] = useState(false);
      const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+     const isMobile = window.innerWidth <= 768; // for mobile responsiveness
 
     const sendMessage = async (image) => {
         try{
@@ -209,6 +210,11 @@ function ChatArea({ socket }){
 
       return <> 
             { selectedChat &&  <div className="app-chat-area">
+                {isMobile && (
+                    <button className="back-btn" onClick={() => dispatch(setSelectedChat(null))}>
+                        ← Back
+                    </button>
+                )}
                 <div className="app-chat-area-header" > 
                    {formatName(selectedUser)}
                 </div>

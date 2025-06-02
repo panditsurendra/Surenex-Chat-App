@@ -52,6 +52,25 @@ io.on('connection', (socket) => {
         .emit('set-message-count', message)
     })
 
+    // socket.on('send-message', (message) => { // notification logic added -> not working
+    //     const { members, senderId } = message;
+    //     const receiverId = members.find(id => id !== senderId);
+
+    //     // Send message to both
+    //     io.to(members[0]).to(members[1]).emit('receive-message', message);
+    //     io.to(members[0]).to(members[1]).emit('set-message-count', message);
+
+    //     // Notification logic
+    //     if (onlineUser.includes(receiverId)) {
+    //         io.to(receiverId).emit('receive-notification', {
+    //             from: senderId,
+    //             chatId: message.chatId,
+    //             message: message.text
+    //         });
+    //     }
+    // });
+
+
     socket.on('clear-unread-messages', data => {
         io
         .to(data.members[0])

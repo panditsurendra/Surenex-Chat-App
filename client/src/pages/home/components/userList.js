@@ -209,7 +209,9 @@ function UsersList({searchKey, socket, onlineUser}){
             let user = obj;
             if(obj.members){
                 user = obj.members.find(mem => mem._id !== currentUser._id);
+                if (!user) return null;
             }
+            if (!user || !user._id) return null; // <== added safety
 
             return <div className="user-search-filter" onClick={() => openChat(user._id)} key={user._id} >
                 <div className={ IsSelectedChat(user) ? "selected-user" : "filtered-user" }>
