@@ -524,6 +524,18 @@ i{
 }
 
 
+@media only screen and (max-width: 768px) {
+  .app-chat-area {
+    height: 75dvh; 
+  }
+
+  .main-chat-area {
+    max-height: calc(100dvh - 120px); 
+  }
+
+}
+
+
 /*****************************************************
 ***********CUSTOM SCROLLBAR FOR CHATAREA**************
 ******************************************************/
